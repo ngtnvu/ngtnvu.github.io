@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Wedding Invitation | Tuấn Vũ & Quỳnh Giao</title>
+    
+    <!-- Tailwind CSS via jsDelivr -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Swiper.js for Gallery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8.4.7/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8.4.7/swiper-bundle.min.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #FFF8F5;
+            color: #5D4037;
+        }
+        .font-dancing {
+            font-family: 'Dancing Script', cursive;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #D39C8D;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.8 );
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .btn-primary {
+            background-color: #D39C8D;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(211, 156, 141, 0.4);
+        }
+        .btn-primary:hover {
+            background-color: #C38C7D;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 10px rgba(211, 156, 141, 0.5);
+        }
+        .btn-primary:disabled {
+            background-color: #e0c4bd;
+            cursor: not-allowed;
+        }
+        
+        /* Splash screen with background */
+        .splash-bg {
+            background-image: url('https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/6a969741-4c03-4659-98d6-fad4c0af97ed');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #D39C8D;
+        }
+        
+        /* New Hero Section Design */
+        .hero-new {
+            background-image: url('https://live.staticflickr.com/65535/54658188636_bbbbb08054_b.jpg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #000;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-new::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .couple-names {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+        
+        .date-section {
+            background: rgba(255, 255, 255, 0.95);
+            color: #5D4037;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin: 3rem auto;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .date-main {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            margin: 1rem 0;
+            color: #D39C8D;
+        }
+        
+        .date-details {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+            color: #5D4037;
+        }
+        
+        .venue-info {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #E0E0E0;
+        }
+        
+        .venue-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .venue-address {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        /* Decorative elements */
+        .decorative-border {
+            border: 2px solid #D39C8D;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .decorative-line {
+            width: 100px;
+            height: 2px;
+            background: #D39C8D;
+            margin: 2rem auto;
+            position: relative;
+        }
+        
+        .decorative-line::before,
+        .decorative-line::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            width: 10px;
+            height: 10px;
+            background: #D39C8D;
+            border-radius: 50%;
+        }
+        
+        .decorative-line::before {
+            left: -15px;
+        }
+        
+        .decorative-line::after {
+            right: -15px;
+        }
+        
+        /* Fallback background colors */
+        .hero-bg-fallback {
+            background: linear-gradient(135deg, #D39C8D 0%, #C38C7D 50%, #B07A6B 100%);
+        }
+        
+        .photo-fallback {
+            background: linear-gradient(135deg, #D39C8D 0%, #E4B5A8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        /* Animation for elements fading in on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* New Photo Gallery Styles */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            padding: 1rem 0;
+        }
+        
+        .photo-item {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background: #f5f5f5;
+        }
+        
+        .photo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .photo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .photo-item:hover .photo-overlay {
+            opacity: 1;
+        }
+        
+        .zoom-icon {
+            color: white;
+            font-size: 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            margin: auto;
+            animation: zoomIn 0.3s ease;
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 0.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+        
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .modal-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .modal-prev {
+            left: -70px;
+        }
+        
+        .modal-next {
+            right: -70px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes zoomIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .couple-names {
+                font-size: 2.5rem;
+            }
+            
+            .date-main {
+                font-size: 2rem;
+            }
+            
+            .date-section {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
+            
+            .hero-content {
+                padding: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .photo-gallery {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 0.5rem;
+            }
+            
+            .photo-item img {
+                height: 200px;
+            }
+            
+            .modal-nav {
+                display: none;
+            }
+            
+            .modal-close {
+                top: -40px;
+                right: 10px;
+                font-size: 1.5rem;
+                width: 35px;
+                height: 35px;
+            }
+            
+            /* Mobile-specific styles */
+            * {
+                -webkit-tap-highlight-color: transparent;
+            }
+            
+            html {
+                font-size: 16px;
+                -webkit-text-size-adjust: 100%;
+            }
+            
+            body {
+                line-height: 1.6;
+                overflow-x: hidden;
+            }
+            
+            .container {
+                max-width: 100%;
+                padding: 0 1rem;
+                margin: 0 auto;
+            }
+            
+            .text-center {
+                text-align: center;
+            }
+            
+            .btn {
+                display: inline-block;
+                background-color: #D39C8D;
+                color: white;
+                padding: 0.75rem 2rem;
+                border: none;
+                border-radius: 50px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                text-decoration: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 6px rgba(211, 156, 141, 0.4);
+            }
+            
+            .btn:hover, .btn:active {
+                background-color: #C38C7D;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 8px rgba(211, 156, 141, 0.5);
+            }
+            
+            .card {
+                background: rgba(255, 255, 255, 0.9);
+                border-radius: 1rem;
+                padding: 1.5rem;
+                margin: 1rem 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .section-title {
+                font-family: 'Dancing Script', cursive;
+                font-size: 2rem;
+                color: #D39C8D;
+                margin-bottom: 1.5rem;
+                text-align: center;
+            }
+        }
+        
+        /* Falling petals animation */
+        .petal {
+            position: absolute;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23FFC0CB"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM5.5 9.5a.5.5 0 01.5-.5h8a.5.5 0 010 1H6a.5.5 0 01-.5-.5z" clip-rule="evenodd" /></svg>');
+            background-size: contain;
+            width: 15px;
+            height: 15px;
+            top: -15px;
+            animation: fall linear infinite;
+            opacity: 0.7;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        
+        /* PDF optimization */
+        @media print {
+            body { 
+                background-color: white !important;
+                color: #333 !important;
+            }
+            .splash-bg {
+                display: none !important;
+            }
+            .petal {
+                display: none !important;
+            }
+            .btn-primary {
+                background-color: #D39C8D !important;
+                color: white !important;
+            }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Petal container -->
+    <div id="petal-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-50"></div>
+
+    <!-- Splash Screen with Background -->
+    <div id="splash-screen" class="splash-bg fixed inset-0 z-50 flex flex-col items-center justify-center transition-opacity duration-1000 ease-in-out">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="relative z-10 text-center text-white">
+            <h1 class="font-dancing text-6xl mb-4 drop-shadow-lg">Vũ & Giao</h1>
+            <p class="text-xl mb-8 drop-shadow-md">Cordially invite you to our wedding celebration.</p>
+            <button id="open-invitation" class="btn-primary font-bold py-4 px-10 rounded-full text-xl transform hover:scale-105 transition-transform">
+                Open
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="opacity-0 transition-opacity duration-1000">
+
+        <!-- New Hero Section -->
+        <header class="hero-new">
+            <div class="hero-content">
+                <!-- Decorative border -->
+                <div class="decorative-border">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </div>
+                
+                <!-- Couple Names -->
+                <h1 class="couple-names">Tuấn Vũ<br>&<br>Quỳnh Giao</h1>
+                
+                <!-- Decorative line -->
+                <div class="decorative-line"></div>
+                
+                <!-- Date Section -->
+                <div class="date-section">
+                    <div class="date-main">17 | 08 | 2025</div>
+                    <div class="date-details">CHỦ NHẬT, 11.00 AM</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="max-w-4xl mx-auto p-4 md:p-8">
+
+            <!-- Invitation Section -->
+            <section class="text-center my-16 fade-in">
+                <p class="text-lg leading-relaxed">
+                    "Tình yêu không phải là nhìn về nhau, mà là cùng nhau nhìn về một hướng."
+                </p>
+                <p class="mt-8 text-lg leading-relaxed">
+                    Trân trọng báo tin Lễ Thành Hôn <br>& Vu Quy của hai con chúng tôi:</p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 my-8">
+                    <div class="text-center">
+                        <h4 class="font-dancing text-5xl text-gray-800">Nguyễn Tuấn Vũ</h4>
+                        <p class="text-gray-500 mt-2">Con Bà Ngô Thị Hoài Bảo <br> <br></p>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="font-dancing text-5xl text-gray-800">Hoàng Nữ Quỳnh Giao</h4>
+                        <p class="text-gray-500 mt-2">Con Ông Hoàng Ngọc Xinh<br> Bà Đặng Thị Mỹ Phượng</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Event Details Section -->
+            <section class="my-16 fade-in">
+                <h2 class="section-title text-center mb-12">Lịch Trình</h2>
+                <div class="flex flex-col md:flex-row gap-8 justify-center">
+                    <!-- Wedding Ceremony Card -->
+                    <div class="card p-8 text-center flex-1">
+                        <h3 class="font-dancing text-4xl mb-4">Lễ Thành Hôn & Vu Quy</h3>
+                        <p class="text-3xl font-bold text-gray-700">09:00</p>
+                        <p class="text-lg my-2">Chủ Nhật, 17/08/2025</p>
+                        <p class="text-gray-600">Tại tư gia</p>
+                    </div>
+                    <!-- Reception Card -->
+                    <div class="card p-8 text-center flex-1">
+                        <h3 class="font-dancing text-4xl mb-4">Tiệc Mừng</h3>
+                        <p class="text-3xl font-bold text-gray-700">11:00</p>
+                        <p class="text-lg my-2">Chủ Nhật, 17/08/2025</p>
+                        <p class="text-gray-600">Nhà Hàng Tiệc cưới An Xuân<br>Thôn An Xuân Tây,Xã Quảng Điền, Thành phố Huế</p>
+                        <a href="https://maps.app.goo.gl/eFbJmJujonLHnGcz7" target="_blank" class="btn-primary inline-block font-bold py-2 px-6 rounded-full mt-6">Xem bản đồ</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Google Map Section -->
+            <section class="my-16 fade-in">
+                <h2 class="section-title text-center mb-12">Bản Đồ Đến Tiệc Cưới</h2>
+                <div class="w-full rounded-lg shadow-lg overflow-hidden">
+                    <iframe
+                        src="https://maps.google.com/maps?q=16.5605772,107.5552468&hl=vi&z=17&amp;output=embed"
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </section>
+
+            <!-- Countdown Section -->
+            <section class="text-center my-20 fade-in">
+                <h2 class="section-title mb-8">Đếm Ngược Ngày Cưới</h2>
+                <div id="countdown" class="flex justify-center gap-4 md:gap-8 text-center">
+                    <div class="bg-white/50 p-4 rounded-lg w-20 md:w-28">
+                        <div id="days" class="text-4xl md:text-6xl font-bold">00</div>
+                        <div class="text-sm md:text-base">Ngày</div>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg w-20 md:w-28">
+                        <div id="hours" class="text-4xl md:text-6xl font-bold">00</div>
+                        <div class="text-sm md:text-base">Giờ</div>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg w-20 md:w-28">
+                        <div id="minutes" class="text-4xl md:text-6xl font-bold">00</div>
+                        <div class="text-sm md:text-base">Phút</div>
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-lg w-20 md:w-28">
+                        <div id="seconds" class="text-4xl md:text-6xl font-bold">00</div>
+                        <div class="text-sm md:text-base">Giây</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Photo Album Section - New Design -->
+            <section class="my-16 fade-in">
+                <h2 class="section-title text-center mb-12">Album Ảnh Cưới</h2>
+                <div class="photo-gallery" id="photo-gallery">
+                    <div class="photo-item" data-index="0">
+                        <img src="https://live.staticflickr.com/65535/54658506610_a5da4991d3_b.jpg" 
+                             alt="Wedding Photo 1"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-fallback w-full h-full" style="display: none;">Wedding Photo 1</div>
+                        <div class="photo-overlay">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-index="1">
+                        <img src="https://live.staticflickr.com/65535/54658418604_f6318761f0_b.jpg" 
+                             alt="Wedding Photo 2"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-fallback w-full h-full" style="display: none;">Wedding Photo 2</div>
+                        <div class="photo-overlay">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-index="2">
+                        <img src="https://live.staticflickr.com/65535/54658612185_55c277a67b_b.jpg" 
+                             alt="Wedding Photo 3"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-fallback w-full h-full" style="display: none;">Wedding Photo 3</div>
+                        <div class="photo-overlay">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-index="3">
+                        <img src="https://live.staticflickr.com/65535/54658409848_8262407c37_b.jpg" 
+                             alt="Wedding Photo 4"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-fallback w-full h-full" style="display: none;">Wedding Photo 4</div>
+                        <div class="photo-overlay">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-index="4">
+                        <img src="https://live.staticflickr.com/65535/54658419364_bccde01954_b.jpg" 
+                             alt="Wedding Photo 5"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-fallback w-full h-full" style="display: none;">Wedding Photo 5</div>
+                        <div class="photo-overlay">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-index="5">
+                        <img src="https://live.staticflickr.com/65535/54658188546_2147fafef5_b.jpg" 
+                             alt="Wedding Photo 6"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-fallback w-full h-full" style="display: none;">Wedding Photo 6</div>
+                        <div class="photo-overlay">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-index="6">
+                        <img src="https://live.staticflickr.com/65535/54658417854_771d52364d_b.jpg" 
+                             alt="Wedding Photo 7"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-fallback w-full h-full" style="display: none;">Wedding Photo 7</div>
+                        <div class="photo-overlay">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-index="7">
+                        <img src="https://live.staticflickr.com/65535/54658509985_e27d2f819d_b.jpg" 
+                             alt="Wedding Photo 8"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-fallback w-full h-full" style="display: none;">Wedding Photo 8</div>
+                        <div class="photo-overlay">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-index="8">
+                        <img src="https://live.staticflickr.com/65535/54658412843_fa5efacf71_b.jpg" 
+                             alt="Wedding Photo 9"
+                             onerror="this.style.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-fallback w-full h-full" style="display: none;">Wedding Photo 9</div>
+                        <div class="photo-overlay">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-index="9">
+                        <img src="https://live.staticflickr.com/65535/54657349742_4def1cfca1_b.jpg" 
+                             alt="Wedding Photo 10"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-fallback w-full h-full" style="display: none;">Wedding Photo 10</div>
+                        <div class="photo-overlay">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-index="10">
+                        <img src="https://live.staticflickr.com/65535/54658414203_6db08a3e5b_b.jpg" 
+                             alt="Wedding Photo 10"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-fallback w-full h-full" style="display: none;">Wedding Photo 11</div>
+                        <div class="photo-overlay">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-index="11">
+                        <img src="https://live.staticflickr.com/65535/54658511390_f2c55f48a1_b.jpg" 
+                             alt="Wedding Photo 10"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-fallback w-full h-full" style="display: none;">Wedding Photo 12</div>
+                        <div class="photo-overlay">
+                            <div class="zoom-icon">🔍</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Photo Modal -->
+            <div id="photo-modal" class="modal">
+                <div class="modal-content">
+                    <span class="modal-close">&times;</span>
+                    <div class="modal-prev modal-nav">&#10094;</div>
+                    <img id="modal-image" class="modal-image" src="" alt="">
+                    <div class="modal-next modal-nav">&#10095;</div>
+                </div>
+            </div>
+
+            <!-- RSVP Section -->
+            <section class="my-16 fade-in">
+                <h2 class="section-title text-center mb-12">Xác Nhận Tham Dự</h2>
+                <div id="rsvp-form-container" class="card p-8 max-w-2xl mx-auto">
+                    <form id="rsvp-form">
+                        <div class="mb-4">
+                            <label for="guestName" class="block text-gray-700 text-sm font-bold mb-2">Tên của bạn:</label>
+                            <input type="text" id="guestName" name="guestName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-gray-700 text-sm font-bold mb-2">Bạn sẽ tham dự chứ?</p>
+                            <div class="flex items-center gap-4">
+                                <label><input type="radio" name="attendance" value="yes" class="mr-2" checked> Chắc chắn rồi!</label>
+                                <label><input type="radio" name="attendance" value="no" class="mr-2"> Tiếc quá</label>
+                            </div>
+                        </div>
+                         <div class="mb-4">
+                            <label for="wishes" class="block text-gray-700 text-sm font-bold mb-2">Gửi lời chúc:</label>
+                            <textarea id="wishes" name="wishes" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" id="submit-rsvp" class="btn-primary font-bold py-3 px-8 rounded-full text-lg">
+                                Gửi Xác Nhận
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                 <div id="rsvp-thanks" class="hidden text-center card p-8 max-w-2xl mx-auto">
+                    <h3 class="font-dancing text-4xl mb-4">Cảm ơn bạn!</h3>
+                    <p>Cảm ơn bạn đã gửi phản hồi. Sự hiện diện của bạn là niềm vinh hạnh cho gia đình chúng tôi!</p>
+                </div>
+                 <div id="rsvp-error" class="hidden text-center card p-8 max-w-2xl mx-auto bg-red-100 text-red-700">
+                    <h3 class="font-dancing text-4xl mb-4">Đã có lỗi xảy ra</h3>
+                    <p>Rất tiếc, đã có lỗi xảy ra khi gửi xác nhận của bạn. Vui lòng thử lại sau.</p>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center p-8 mt-16">
+            <p class="font-dancing text-4xl">Thank You!</p>
+            <p class="mt-2">#VuGiaoWedding2025</p>
+        </footer>
+
+    </main>
+    
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/02/14/audio_29b28a927c.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function ( ) {
+            
+            const splashScreen = document.getElementById('splash-screen');
+            const openButton = document.getElementById('open-invitation');
+            const mainContent = document.getElementById('main-content');
+            const bgMusic = document.getElementById('bg-music');
+            const countdownDate = new Date("August 17, 2025 09:00:00").getTime();
+            const rsvpForm = document.getElementById('rsvp-form');
+            const rsvpFormContainer = document.getElementById('rsvp-form-container');
+            const rsvpThanks = document.getElementById('rsvp-thanks');
+            const rsvpError = document.getElementById('rsvp-error');
+            const submitButton = document.getElementById('submit-rsvp');
+            const faders = document.querySelectorAll('.fade-in');
+            const petalContainer = document.getElementById('petal-container');
+
+            // Photo gallery and modal elements
+            const photoItems = document.querySelectorAll('.photo-item');
+            const modal = document.getElementById('photo-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalClose = document.querySelector('.modal-close');
+            const modalPrev = document.querySelector('.modal-prev');
+            const modalNext = document.querySelector('.modal-next');
+            let currentImageIndex = 0;
+            
+            // Photo gallery data
+            const photos = [
+                {
+                    src: 'https://live.staticflickr.com/65535/54658506610_a5da4991d3_b.jpg',
+                    alt: 'Wedding Photo 1'
+                },
+                {
+                    src: 'https://live.staticflickr.com/65535/54658418604_f6318761f0_b.jpg',
+                    alt: 'Wedding Photo 2'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1511285560921-4c9272f51e81?q=80&w=2574&auto=format&fit=crop',
+                    alt: 'Wedding Photo 3'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1550005809-91ad75fb315f?q=80&w=2574&auto=format&fit=crop',
+                    alt: 'Wedding Photo 4'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2670&auto=format&fit=crop',
+                    alt: 'Wedding Photo 5'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1520854221256-17452cc3da25?q=80&w=2670&auto=format&fit=crop',
+                    alt: 'Wedding Photo 6'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1543163521-a5a73656163d?q=80&w=2670&auto=format&fit=crop',
+                    alt: 'Wedding Photo 7'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2670&auto=format&fit=crop',
+                    alt: 'Wedding Photo 8'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1587899769938-518a669515e3?q=80&w=2670&auto=format&fit=crop',
+                    alt: 'Wedding Photo 9'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1565599243293-9c7a6b1a7c33?q=80&w=2670&auto=format&fit=crop',
+                    alt: 'Wedding Photo 10'
+                }
+            ];
+
+            function createPetal() {
+                const petal = document.createElement('div');
+                petal.classList.add('petal');
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.animationDuration = Math.random() * 3 + 4 + 's';
+                petal.style.opacity = Math.random();
+                petalContainer.appendChild(petal);
+                setTimeout(() => { petal.remove(); }, 7000);
+            }
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+                const days = Math.floor((distance / (1000 * 60 * 60 * 24)));
+                const hours = Math.floor(((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+                const minutes = Math.floor(((distance % (1000 * 60 * 60)) / (1000 * 60)));
+                const seconds = Math.floor(((distance % (1000 * 60)) / 1000));
+                document.getElementById("days").innerText = days.toString().padStart(2, '0');
+                document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+                document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+                document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("countdown").innerHTML = "<div class='text-2xl font-dancing'>The Wedding Day is Here!</div>";
+                }
+            }
+
+            function openModal(index) {
+                currentImageIndex = index;
+                modalImage.src = photos[index].src;
+                modalImage.alt = photos[index].alt;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+
+            function showPrevImage() {
+                currentImageIndex = (currentImageIndex - 1 + photos.length) % photos.length;
+                modalImage.src = photos[currentImageIndex].src;
+                modalImage.alt = photos[currentImageIndex].alt;
+            }
+
+            function showNextImage() {
+                currentImageIndex = (currentImageIndex + 1) % photos.length;
+                modalImage.src = photos[currentImageIndex].src;
+                modalImage.alt = photos[currentImageIndex].alt;
+            }
+
+            // Event listeners for photo gallery
+            photoItems.forEach((item, index) => {
+                item.addEventListener('click', () => openModal(index));
+            });
+
+            modalClose.addEventListener('click', closeModal);
+            modalPrev.addEventListener('click', showPrevImage);
+            modalNext.addEventListener('click', showNextImage);
+
+            // Close modal when clicking outside the image
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (modal.classList.contains('active')) {
+                    switch(e.key) {
+                        case 'Escape':
+                            closeModal();
+                            break;
+                        case 'ArrowLeft':
+                            showPrevImage();
+                            break;
+                        case 'ArrowRight':
+                            showNextImage();
+                            break;
+                    }
+                }
+            });
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            modalImage.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            modalImage.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        showNextImage();
+                    } else {
+                        showPrevImage();
+                    }
+                }
+            }
+
+            openButton.addEventListener('click', () => {
+                splashScreen.style.opacity = '0';
+                mainContent.style.opacity = '1';
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                }, 1000);
+                bgMusic.play().catch(error => console.log("Autoplay prevented."));
+                setInterval(createPetal, 500);
+            });
+
+            const countdownInterval = setInterval(updateCountdown, 1000);
+            updateCountdown();
+
+            rsvpForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbyT3nxIBgAgdQisQoNpCdH60Bi7EBKrA4T3nKVcoRRG8t2Z9XKC1kAM7WVx--sLUlWAVQ/exec';
+                
+                submitButton.disabled = true;
+                submitButton.innerText = 'Đang gửi...';
+
+                fetch(scriptURL, { method: 'POST', body: new FormData(rsvpForm )})
+                    .then(response => {
+                        console.log('Success!', response);
+                        rsvpFormContainer.classList.add('hidden');
+                        rsvpThanks.classList.remove('hidden');
+                        rsvpError.classList.add('hidden');
+                    })
+                    .catch(error => {
+                        console.error('Error!', error.message);
+                        rsvpFormContainer.classList.add('hidden');
+                        rsvpError.classList.remove('hidden');
+                        rsvpThanks.classList.add('hidden');
+                    })
+                    .finally(() => {
+                        submitButton.disabled = false;
+                        submitButton.innerText = 'Gửi Xác Nhận';
+                    });
+            });
+
+            const appearOptions = {
+                threshold: 0.2,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+        });
+    </script>
+</body>
+</html>
+
